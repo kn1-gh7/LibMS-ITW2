@@ -1,2 +1,2 @@
 # fuzzy-computing-machine
-CSO 205 Project
+CSE 205 Project
