@@ -1,4 +1,5 @@
 # Library management system
+Library managemenyt system for public libraries
 ### Features
 - books database
 - author database
