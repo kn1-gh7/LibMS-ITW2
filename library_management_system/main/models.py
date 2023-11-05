@@ -46,6 +46,11 @@ class LibraryDB(models.Model):
             raise ValidationError('ERROR: Either trying to return a book which was not issued, or trying to issue more books that available!')
     
 
+class BooksAndUsers(models.Model):
+    book_id = models.ForeignKey(Books, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
+
+
 class Transactions(models.Model):
     # trans_ID  = models.AutoField()
     trans_type= models.ForeignKey(TransactionTypes, on_delete=models.CASCADE)
@@ -59,7 +64,14 @@ class Transactions(models.Model):
         if self.trans_type == 1:
             book = LibraryDB.objects.get_or_create(book_isbn=self.book_id)
             book.issued_count += 1
+            book.save()
+            
+            BooksAndUsers(book_id=self.book_id, user_id=self.the_user_id).save()
+            
         elif self.trans_type == 2:
             book = LibraryDB.objects.get_or_create(book_isbn=self.book_id)
             book.issued_count -= 1
+            book.save()
+            
+            BooksAndUsers.objects.filter(book_id=self.book_id, user_id=self.the_user_id).all()[0].delete()
         super(self).save(*args,**kwargs)
