@@ -35,7 +35,7 @@ class LibraryDB(models.Model):
     class Meta:
         constraints = [
             models.CheckConstraint(
-                check= models.Q(total_count___gte=models.F("issued_count")) & models.Q(issued_count___gte=0),
+                check= models.Q(total_count__gt=models.F("issued_count")) & models.Q(issued_count__gte=0),
                 name="not_more_books_issued",
                 violation_error_message="ERROR: Either trying to return a book which was not issued,"
                                                 " or trying to issue more books that available!"
