@@ -12,4 +12,8 @@ $ source ./newvenv/bin/activate
 
 $ pip install -r requirements.txt
 
+$ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+$ pip install mysqlclient
+
+
 ```
