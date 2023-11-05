@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibMS - The Library Management System</title>
+    <style>
+        body {
+            margin: 3vh auto;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d3d3de;
+        }
+
+        #header {
+            background-color: #0a0457;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+            border-radius: 30px 30px 0px 0px;
+        }
+
+        #container {
+            display: flex;
+            height: 72vh;
+            margin-left: 5%;
+            margin-right: 5%;
+            background-color: #fff;
+            border-radius: 0px 0px 30px 30px;
+        }
+
+        #sidebar {
+            width: 30%;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #main-content {
+            width: 50%;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #0a0457;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: medium;
+        }
+
+        .nav_button{
+            width: 50%;
+            margin-left: 15%;
+            margin-right: 15%;
+            font-size: larger;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus, select:focus {
+            outline: none;
+            border: 1px solid #0a0457;
+        }
+
+        button[type="submit"] {
+            background-color: #0a0457;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>LibMS</h1>
+        <h2>The Library Management System</h2>
+    </div>
+    <div id="container">
+        <div id="sidebar">
+            <button class="nav_button">Add Book</button>
+            <button class="nav_button">Add Reader</button>
+            <button class="nav_button">Issue Book</button>
+            <button class="nav_button">Return Book</button>
+            <button class="nav_button">Search Book</button>
+            <button class="nav_button">Search Reader</button>
+            <button class="nav_button">Transactions</button>
+        </div>
+        <div id="main-content">
+            <form style= "margin-right: 10%; font-size: larger;">
+                <h2>Form Heading</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role">
+                        <option value="student">Student</option>
+                        <option value="librarian">Librarian</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
