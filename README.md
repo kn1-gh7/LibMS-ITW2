@@ -1,7 +1,12 @@
 # fuzzy-computing-machine
 
 CSE 205 Project
+
 Made by _Yuval Goyal_ and _Arnav Kumar Sinha_.
+
+Roll No  : 22075097, 22075013
+
+Group No.: 35
 
 # A library management system
 
