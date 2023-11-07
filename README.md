@@ -25,4 +25,5 @@ $ django-admin startproject libms .
 $ python3 manage.py startapp main
 
 ```
+> [!NOTE]
 > NOTE: You will need to set up the `genres` table and the  `transaction_types` table in the database, either through the admin panel, or directly in the mysql server
