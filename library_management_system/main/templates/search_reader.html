@@ -1,0 +1,34 @@
+{% extends 'base_search.html' %}
+
+{% block style %}
+<style>
+    #search_reader {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block content_form %}
+<h2>Search Reader</h2>
+{% csrf_token %}
+{{form}}
+{% endblock %}
+
+{% block content_table %}
+{% if obj %}
+<thead>
+    <tr>
+        <th>User ID</th>
+        <th>Name</th>
+    </tr>
+</thead>
+<tbody>
+    {% for i in obj %}
+    <tr>
+        <td><a style="cursor: pointer;" onclick="window.location.pathname='reader/{{i.user_id}}'">{{i.user_id}}</a></td>
+        <td>{{i.name}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+{% endif %}
+{% endblock %}
