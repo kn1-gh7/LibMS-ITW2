@@ -1,7 +1,10 @@
 # fuzzy-computing-machine
+
 CSE 205 Project
+Made by _Yuval Goyal_ and _Arnav Kumar Sinha_.
 
 # A library management system
+
 
 ---
 ### Quickstart:
