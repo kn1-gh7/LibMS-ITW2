@@ -1,14 +1,14 @@
 <!-- # fuzzy-computing-machine -->
 
-CSE 205 Project
-
-Made by _Yuval Goyal_ and _Arnav Kumar Sinha_.
-
-Roll No  : 22075097, 22075013
-
-Group No.: 35
-
+# CSE 205 Project
 # A library management system
+
+>[!IMPORTANT]
+> Made by `Yuval Goyal` `(22075097)`  and `Arnav Kumar Sinha` `(22075013)`
+>
+> Group No: `35`
+
+
 
 
 ---
