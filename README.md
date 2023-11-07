@@ -1,4 +1,4 @@
-# fuzzy-computing-machine
+<!-- # fuzzy-computing-machine -->
 
 CSE 205 Project
 
