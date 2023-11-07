@@ -4,7 +4,7 @@ CSE 205 Project
 # A library management system
 
 ---
-Quickstart:
+### Quickstart:
 
 Firstly set up `mysql` server with user `root` and password = `password`.
 
