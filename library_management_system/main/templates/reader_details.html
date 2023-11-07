@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<div style= "margin-right: 10%; font-size: larger;">
+    {% block content %}
+    {% if obj %}
+    <h2>Reader Details</h2>
+    <table>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>User ID</td>
+            <td>{{obj.user_id}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{obj.name}}</td>
+        </tr>
+        <tr>
+            <td>Current total issues</td>
+            <td>{{obj1.count}}</td>
+        </tr>
+        <tr>
+            <td>Overall total issues</td>
+            <td>{{obj2.count}}</td>
+        </tr>
+    </table>
+    <br>
+    <h2>Current Issues</h2>
+    <table>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Date of Issue</th>
+            <th>Transaction ID</th>
+        </tr>
+        {% for i in obj1 %}
+        <tr>
+            <td><a style="cursor: pointer;" onclick="window.location.pathname='book/{{i.book_id.ISBN}}'">{{i.book_id.ISBN}}</a></td>
+            <td>{{i.book_id.title}}</td>
+            <td>{{i.t_id.trans_time}}</td>
+            <td>{{i.t_id.pk}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h2 style="color: red;">No such book found!</h2>
+    {% endif %}
+    {% endblock %}
+</div>
+{% endblock %}

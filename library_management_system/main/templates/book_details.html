@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+<div style= "margin-right: 10%; font-size: larger;">
+    {% block content %}
+    {% if obj %}
+    <h2>Book Details</h2>
+    <table>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>ISBN</td>
+            <td>{{obj.ISBN}}</td>
+        </tr>
+        <tr>
+            <td>Title</td>
+            <td>{{obj.title}}</td>
+        </tr>
+        <tr>
+            <td>Author</td>
+            <td>{{obj.author}}</td>
+        </tr>
+        <tr>
+            <td>Year of Publication</td>
+            <td>{{obj.year_published}}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td>{{obj.description_text}}</td>
+        </tr>
+        <tr>
+            <td>Genre(s)</td>
+            <td>
+                {% for i in arr %}
+                <span style="background-color: #d4d1cb; padding-left: 5px; padding-right: 5px; padding-top: 1px; padding-bottom: 1px;"><code>{{i}}</code></span>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <td>Total Copies</td>
+            <td>{{obj1.total_count}}</td>
+        </tr>
+        <tr>
+            <td>Issued/Available Copies</td>
+            <td>{{obj1.issued_count}}/{{available}}</td>
+        </tr>
+    </table>
+    <br>
+    <h2>Current Issuers</h2>
+    <table>
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Date of Issue</th>
+            <th>Transaction ID</th>
+        </tr>
+        {% for i in obj2 %}
+        <tr>
+            <td><a style="cursor: pointer;" onclick="window.location.pathname='reader/{{i.user_id.user_id}}'">{{i.user_id.user_id}}</a></td>
+            <td>{{i.user_id.name}}</td>
+            <td>{{i.t_id.trans_time}}</td>
+            <td>{{i.t_id.pk}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h2 style="color: red;">No such book found!</h2>
+    {% endif %}
+    {% endblock %}
+</div>
+{% endblock %}

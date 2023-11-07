@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style>
+    #transactions {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block main_content %}
+<div style= "margin-right: 10%; font-size: larger;"></div>
+    <h2>All transactions</h2>
+    {% for i in obj %}
+    <p>{{i}}</p>
+    {% endfor %}
+</div>
+{% endblock %}

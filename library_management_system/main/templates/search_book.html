@@ -1,0 +1,38 @@
+{% extends 'base_search.html' %}
+
+{% block style %}
+<style>
+    #search_book {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
+
+{% block content_form %}
+<h2>Search Book</h2>
+{% csrf_token %}
+{{form}}
+{% endblock %}
+
+{% block content_table %}
+{% if obj %}
+<thead>
+    <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Description</th>
+    </tr>
+</thead>
+<tbody>
+    {% for i in obj %}
+    <tr>
+        <td><a style="cursor: pointer;" onclick="window.location.pathname='book/{{i.ISBN}}'">{{i.ISBN}}</a></td>
+        <td>{{i.title}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.description_text}}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+{% endif %}
+{% endblock %}
